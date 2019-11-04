@@ -13,10 +13,11 @@ class Loader(val processor: Processor, val charset: Charset = StandardCharsets.U
 	fun loadFile(path: String): Map<String, Int> {
 		val m = HashMap<String, Int>()
 		File(path).inputStream().bufferedReader().lines().forEach {
-			processor.process(it).forEach { t: String ->
-									   val c = m.getOrElse(t) { 0 }
-								   m.put(t, c + 1)
-			}
+			processor
+				.process(it)
+				.forEach { t: String ->
+			       m.put(t, (m.get(t) ?: 0) + 1)
+				}
 		}
 
 		return m
