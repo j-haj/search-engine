@@ -10,9 +10,9 @@ import java.nio.file.FileSystems
 
 class Loader(val processor: Processor, val charset: Charset = StandardCharsets.UTF_8) {
 
-	fun loadFile(path: String): Map<String, Int> {
+	fun loadFile(file: File): Map<String, Int> {
 		val m = HashMap<String, Int>()
-		File(path).inputStream().bufferedReader().lines().forEach {
+		file.inputStream().bufferedReader().lines().forEach {
 			processor
 				.process(it)
 				.forEach { t: String ->
