@@ -18,7 +18,7 @@ class LoaderTest {
 		testFolder.create()
 		val fileName = "test.txt"
 		val tempFile = testFolder.newFile(fileName)
-		val content = "This is a Test; This will - be parsed! Don't and won't?"
+		val content = "This is a Test;\n This will\n - be\n\n\t\t parsed! Don't and won't?"
 		tempFile.writeText(content)
 
 	    val loader = Loader(DefaultProcessor())

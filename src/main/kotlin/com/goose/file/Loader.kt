@@ -15,11 +15,8 @@ class Loader(val processor: Processor, val charset: Charset = StandardCharsets.U
         file.inputStream().bufferedReader().lines().forEach {
             processor
                 .process(it)
-                .forEach { t: String ->
-                   m.put(t, (m.get(t) ?: 0) + 1)
-                }
+                .forEach { t -> m.put(t, (m.get(t) ?: 0) + 1) }
         }
-
         return m
     }
 }
