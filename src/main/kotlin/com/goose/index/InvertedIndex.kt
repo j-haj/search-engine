@@ -16,8 +16,9 @@ class InvertedIndex {
     fun addFileIndex(fileId: FileId, index: Map<String, Long>) {
         index.forEach {
             k, _ ->
-                val l = invertedIndex.getOrElse(k) { arrayListOf(fileId) }
-                l.add(fileId)
+            val l = invertedIndex.getOrDefault(k, ArrayList())
+            l.add(fileId)
+            invertedIndex.put(k, l)
         }
     }
 
