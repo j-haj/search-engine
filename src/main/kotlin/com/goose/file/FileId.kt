@@ -1,10 +1,10 @@
 package com.goose.file
 
-data class FileId private constructor(val path: String, val id: Int) {
+data class FileId private constructor(val path: String, val id: Long) {
     companion object {
         // Used to generate unique IDs for each FileId issued
-        private var nextId = 0
-        private var idLookup = HashMap<String, Int>()
+        private var nextId = 0L
+        private var idLookup = HashMap<String, Long>()
 
         fun issueFileId(path: String): FileId {
             val i = nextId

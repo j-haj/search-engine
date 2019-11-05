@@ -13,7 +13,7 @@ class InvertedIndex {
      * @param fileId: The FileId object for the respective file.
      * @param index: The index generated from `fileId`
      */
-    fun addFileIndex(fileId: FileId, index: Map<String, Int>) {
+    fun addFileIndex(fileId: FileId, index: Map<String, Long>) {
         index.forEach {
             k, _ ->
                 val l = invertedIndex.getOrElse(k) { arrayListOf(fileId) }
