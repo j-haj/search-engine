@@ -29,7 +29,7 @@ class InvertedIndex {
      * @param word: The word being looked up in inverted index.
      * @return a possibly null list of FileIds
      */
-    fun getFileIds(word: String): List<FileId>? = invertedIndex.get(word)
+    fun getFileIds(word: String): List<FileId> = invertedIndex.getOrDefault(word, emptyList())
 
     /**
      * Checks if the given word is contained in the inverted index.

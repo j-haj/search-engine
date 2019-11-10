@@ -20,9 +20,9 @@ class InvertedIndexTest {
             // Check the word is in the index
             assertTrue(invertedIndex.containsWord(k))
             // Make sure each list has length 1
-            assertEquals(1, invertedIndex.getFileIds(k)?.size)
+            assertEquals(1, invertedIndex.getFileIds(k).size)
             // Make sure each list as a single element equal to fileId
-            assertEquals(fileId, invertedIndex.getFileIds(k)?.first())
+            assertEquals(fileId, invertedIndex.getFileIds(k).first())
         }
     }
 }
