@@ -10,6 +10,12 @@ import java.nio.file.FileSystems
 
 class Loader(val processor: Processor, val charset: Charset = StandardCharsets.UTF_8) {
 
+    /**
+     * Loads a file return a map of words and their frequencies.
+     *
+     * @param file A file object being processed.
+     * @return A map of words and their frequencies.
+     */
     fun loadFile(file: File): Map<String, Int> {
         val m = HashMap<String, Int>()
         file.inputStream().bufferedReader().lines().forEach {

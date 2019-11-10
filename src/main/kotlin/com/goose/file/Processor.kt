@@ -8,8 +8,8 @@ class DefaultProcessor : Processor {
     override fun process(input: String): List<String>  = input
         .replace(Regex("""\p{Punct}"""), "")
         .split(Regex("""\s+"""))
-        .filter { w -> !w.isEmpty() }
-        .map { w -> w.toLowerCase() }
+        .filter {!it.isEmpty() }
+        .map { it.toLowerCase() }
         .toList()
 
 
