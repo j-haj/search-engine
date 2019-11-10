@@ -30,5 +30,12 @@ dependencies {
 
 }
 
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
 // Define the main class for the application.
 mainClassName = 'com.goose.AppKt'
